@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import cardone from "../assets/cardone.png";
+import cardtwo from "../assets/cardtwo.png";
+import cardthree from "../assets/cardthree.png";
+
+const cards = [
+  {
+    img: cardone,
+    title: "YOUR BUSINESS IN YOUR POCKET",
+    description:
+      "The LeadConnector mobile app brings all your leads, prospects, customers & appointments to your pocket."
+  },
+  {
+    img: cardtwo,
+    title: "INTEGRATE WITH ANYTHING",
+    description:
+      "With LeadConnector in Zapier, you can seamlessly integrate with over 4,000 of the most popular apps in the world"
+  },
+  {
+    img: cardthree,
+    title: "ARTIFICIAL INTELLIGENCE BUILT IN",
+    description:
+      "LeadConnector allows you to leverage AI (Artificial Intelligence) and Machine Learning to manage the conversation."
+  },
+];
+---
+
+<section class="bg-white w-full flex items-center justify-center text-[#444444] bg-[url('../assets/servicebg.jpg')] bg-center bg-no-repeat">
+  <div class="flex flex-col max-w-6xl lg:py-16 py-8 px-4 gap-12 ">
+    
+    <div class="text-center max-w-4xl mx-auto space-y-4">
+      <h1 class="lg:text-4xl text-2xl font-bold">Wherever You Are</h1>
+      <p class="mt-3 lg:text-xl text-md text-gray-600 leading-relaxed">
+        Whether it's your phone, Wordpress, or any of the 4,000+ apps on Zapier,
+        LeadConnector integrates wherever you need it to.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 gap-4">
+      {cards.map(card => (
+        <div class="bg-white border text-[#444444] border-gray-200 rounded-xl py-8 px-6 flex flex-col justify-between shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
+            <Image src={card.img} alt={card.title} width={180} height={50} class="mx-auto mb-6" />
+            <h1 class="text-center text-xl font-semibold">
+                {card.title}
+            </h1>
+            <div class="w-10 h-0.5 bg-orange-500 mx-auto my-3 rounded-full"></div>
+            <p class="text-center text-md leading-relaxed">
+                {card.description}
+            </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
