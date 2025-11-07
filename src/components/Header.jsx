@@ -49,7 +49,6 @@ export default function Header() {
             // onClick={() => setMenuOpen(!menuOpen)}
             // className="flex flex-col gap-1 cursor-pointer p-2"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="bg-red-500"
             data-testid="mobile-menu-button"
           >
             <div className="flex flex-col gap-1 cursor-pointer p-4">
