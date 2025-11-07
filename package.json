@@ -19,5 +19,9 @@
     "react-dom": "^19.2.0",
     "react-phone-input-2": "^2.15.1",
     "tailwindcss": "^4.1.16"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.0"
   }
 }

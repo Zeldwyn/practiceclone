@@ -46,17 +46,26 @@ export default function Header() {
 
         <div className="relative lg:hidden">
           <button
+            // onClick={() => setMenuOpen(!menuOpen)}
+            // className="flex flex-col gap-1 cursor-pointer p-2"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex flex-col gap-1 cursor-pointer"
+            className="bg-red-500"
+            data-testid="mobile-menu-button"
           >
-            <span className="w-6 h-0.5 bg-orange-500"></span>
-            <span className="w-6 h-0.5 bg-orange-500"></span>
-            <span className="w-6 h-0.5 bg-orange-500"></span>
+            <div className="flex flex-col gap-1 cursor-pointer p-4">
+               <span className="w-6 h-0.5 bg-orange-500"></span>
+              <span className="w-6 h-0.5 bg-orange-500"></span>
+              <span className="w-6 h-0.5 bg-orange-500"></span>
+            </div>         
           </button>
 
           {/* Dropdown menu */}
           {menuOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg flex flex-col text-lg overflow-hidden transition-all duration-300">
+            // <div className="absolute right-0 w-48 bg-white rounded-lg shadow-lg flex flex-col text-lg overflow-hidden transition-all duration-300">
+            <div
+              className="absolute right-0 w-48 bg-white rounded-lg shadow-lg flex flex-col text-lg overflow-hidden transition-all duration-300"
+              data-testid="mobile-menu"
+            >
               {navItems.map((item) => (
                 <a
                   key={item.href}
